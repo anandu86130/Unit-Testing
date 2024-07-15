@@ -50,7 +50,7 @@ func TestUserList(t *testing.T) {
 	mock, cleanup := UserListMock()
 	defer cleanup()
 	gin.SetMode(gin.TestMode)
-	t.Run("Successfull fetch all users", func(t *testing.T) {
+	t.Run("Successfully fetch all users", func(t *testing.T) {
 		mock.ExpectQuery("SELECT \\* FROM \"users\" WHERE \"users\".\"deleted_at\" IS NULL").WillReturnRows(
 			sqlmock.NewRows([]string{"id", "name", "email", "password"}).
 				AddRow(1, "user1", "user1@gmail.com", "user1@123").
