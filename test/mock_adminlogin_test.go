@@ -75,7 +75,7 @@ func TestAdminLogin(t *testing.T) {
 		router.ServeHTTP(w, req)
 
 		assert.Equal(t, http.StatusOK, w.Code)
-		assert.Contains(t, w.Body.String(), "Login successful")
+		assert.Contains(t, w.Body.String(), "Login successfully")
 	})
 
 	t.Run("invalid email", func(t *testing.T) {
